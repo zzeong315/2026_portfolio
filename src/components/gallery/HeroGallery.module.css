@@ -1,0 +1,80 @@
+/* 섹션 높이만큼 스크롤하는 동안 stage 가 고정되고, 그 진행도로 3D 배치가 바뀝니다 */
+.hero {
+  height: 240vh;
+  position: relative;
+}
+
+.stage {
+  position: sticky;
+  top: 58px;
+  height: calc(100svh - 58px);
+  overflow: hidden;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  pointer-events: none;
+  opacity: calc(1 - var(--progress, 0) * 3);
+}
+
+.name {
+  margin: 0 0 4px;
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.1;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+  padding: 0 16px;
+  flex-wrap: wrap;
+  text-align: center;
+  pointer-events: none;
+}
+
+.caption strong {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.caption span {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.skip {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 28px;
+  text-decoration: none;
+}
+
+.skip:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .caption {
+    bottom: 64px;
+  }
+  .center :global(.label) {
+    display: none;
+  }
+}

@@ -1,0 +1,222 @@
+.head {
+  padding: clamp(28px, 4vw, 48px) 0 clamp(40px, 6vw, 72px);
+}
+
+.crumbs {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.crumbs a {
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  color: var(--accent);
+}
+
+.head h1 {
+  font-size: clamp(48px, 9vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: clamp(32px, 5vw, 56px) 0 24px;
+  max-width: 14ch;
+}
+
+.summary {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 760px;
+  color: var(--ink-soft);
+}
+
+/* 정보: 굵은 괘선 아래 가로 열 */
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 20px 32px;
+  margin: 0 0 clamp(32px, 5vw, 56px);
+  padding-top: 16px;
+  border-top: 2px solid var(--rule);
+}
+
+.info dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+}
+
+.contribution {
+  grid-column: span 2;
+}
+
+.bar {
+  display: flex;
+  height: 6px;
+  margin: 10px 0;
+}
+
+.contribution ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 13px;
+}
+
+.contribution i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+}
+
+/* 성과 지표: 큰 세리프 숫자 */
+.metrics {
+  list-style: none;
+  padding: 0;
+  margin: clamp(40px, 6vw, 72px) 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.metrics li {
+  padding: 24px 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metrics li + li {
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+
+.metrics strong {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* 본문: 가운데 좁은 단 + 세리프 소제목 */
+.prose {
+  max-width: 680px;
+  margin: clamp(56px, 8vw, 96px) auto 0;
+  font-size: 17px;
+}
+
+.prose h2 {
+  font-size: 40px;
+  margin: 64px 0 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose h2:first-child + p::first-letter {
+  font-family: var(--serif);
+  float: left;
+  font-size: 4.2em;
+  line-height: 0.85;
+  padding: 6px 10px 0 0;
+  color: var(--accent);
+}
+
+.prose blockquote {
+  margin: 32px 0;
+  padding: 0 0 0 24px;
+  border-left: 2px solid var(--accent);
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose strong {
+  background: linear-gradient(transparent 60%, var(--highlight) 60%);
+}
+
+.prose li {
+  margin: 4px 0;
+}
+
+.prose code {
+  font-size: 0.9em;
+  background: var(--placeholder);
+  padding: 2px 6px;
+}
+
+.visit {
+  display: inline-block;
+  margin-top: 32px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--highlight);
+}
+
+.gallery {
+  display: grid;
+  gap: 40px;
+  margin-top: clamp(56px, 8vw, 96px);
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery figcaption {
+  margin-top: 10px;
+}
+
+.next {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: clamp(72px, 10vw, 128px);
+  padding-top: 16px;
+  border-top: 2px solid var(--rule);
+  text-decoration: none;
+}
+
+.next strong {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1;
+}
+
+.next:hover strong {
+  color: var(--accent);
+}
+
+@media (max-width: 560px) {
+  .contribution {
+    grid-column: auto;
+  }
+  .metrics li + li {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}

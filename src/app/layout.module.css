@@ -1,0 +1,15 @@
+.footer {
+  margin-top: clamp(72px, 10vw, 128px);
+  padding: 0 0 32px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.footer :global(.container) {
+  border-top: 2px solid var(--rule);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}

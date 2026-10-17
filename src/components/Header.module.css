@@ -1,0 +1,58 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 58px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.issue {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: clamp(14px, 2.4vw, 28px);
+  font-size: 14px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .inner {
+    grid-template-columns: 1fr auto;
+  }
+  .issue {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav a:nth-child(n + 3) {
+    display: none;
+  }
+}
